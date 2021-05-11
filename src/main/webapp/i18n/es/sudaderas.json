@@ -1,0 +1,29 @@
+{
+  "wiseshitApp": {
+    "sudaderas": {
+      "home": {
+        "title": "Sudaderas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Sudaderas",
+        "createOrEditLabel": "Crear o editar Sudaderas",
+        "notFound": "Ningún Sudaderas encontrado"
+      },
+      "created": "Un nuevo Sudaderas ha sido creado con el identificador {{ param }}",
+      "updated": "Un Sudaderas ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Sudaderas ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Sudaderas {{ id }}?"
+      },
+      "detail": {
+        "title": "Sudaderas"
+      },
+      "id": "ID",
+      "stock": "Stock",
+      "imagen": "Imagen",
+      "talla": "Talla",
+      "color": "Color",
+      "coleccion": "Coleccion",
+      "venta": "Venta"
+    }
+  }
+}

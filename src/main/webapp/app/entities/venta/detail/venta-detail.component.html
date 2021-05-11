@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="venta">
+      <h2 data-cy="ventaDetailsHeading"><span jhiTranslate="wiseshitApp.venta.detail.title">Venta</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ venta.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.venta.importe">Importe</span></dt>
+        <dd>
+          <span>{{ venta.importe }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.venta.fecha">Fecha</span></dt>
+        <dd>
+          <span>{{ venta.fecha | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.venta.camisetas">Camisetas</span></dt>
+        <dd>
+          <span *ngFor="let camisetas of venta.camisetas; let last = last">
+            <a [routerLink]="['/camisetas', camisetas?.id, 'view']">{{ camisetas.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.venta.sudaderas">Sudaderas</span></dt>
+        <dd>
+          <span *ngFor="let sudaderas of venta.sudaderas; let last = last">
+            <a [routerLink]="['/sudaderas', sudaderas?.id, 'view']">{{ sudaderas.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.venta.accesorios">Accesorios</span></dt>
+        <dd>
+          <span *ngFor="let accesorios of venta.accesorios; let last = last">
+            <a [routerLink]="['/accesorios', accesorios?.id, 'view']">{{ accesorios.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.venta.usuario">Usuario</span></dt>
+        <dd>
+          <div *ngIf="venta.usuario">
+            <a [routerLink]="['/usuario', venta.usuario?.id, 'view']">{{ venta.usuario?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/venta', venta.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

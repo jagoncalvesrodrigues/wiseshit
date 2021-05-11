@@ -1,0 +1,29 @@
+{
+  "wiseshitApp": {
+    "accesorios": {
+      "home": {
+        "title": "Accesorios",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Accesorios",
+        "createOrEditLabel": "Crear o editar Accesorios",
+        "notFound": "Ningún Accesorios encontrado"
+      },
+      "created": "Un nuevo Accesorios ha sido creado con el identificador {{ param }}",
+      "updated": "Un Accesorios ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Accesorios ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Accesorios {{ id }}?"
+      },
+      "detail": {
+        "title": "Accesorios"
+      },
+      "id": "ID",
+      "stock": "Stock",
+      "imagen": "Imagen",
+      "talla": "Talla",
+      "color": "Color",
+      "coleccion": "Coleccion",
+      "venta": "Venta"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="sudaderas">
+      <h2 data-cy="sudaderasDetailsHeading"><span jhiTranslate="wiseshitApp.sudaderas.detail.title">Sudaderas</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ sudaderas.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.sudaderas.stock">Stock</span></dt>
+        <dd>
+          <span>{{ sudaderas.stock }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.sudaderas.imagen">Imagen</span></dt>
+        <dd>
+          <span>{{ sudaderas.imagen }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.sudaderas.talla">Talla</span></dt>
+        <dd>
+          <span>{{ sudaderas.talla }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.sudaderas.color">Color</span></dt>
+        <dd>
+          <span>{{ sudaderas.color }}</span>
+        </dd>
+        <dt><span jhiTranslate="wiseshitApp.sudaderas.coleccion">Coleccion</span></dt>
+        <dd>
+          <span>{{ sudaderas.coleccion }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/sudaderas', sudaderas.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

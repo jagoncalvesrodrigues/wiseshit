@@ -1,0 +1,29 @@
+{
+  "wiseshitApp": {
+    "camisetas": {
+      "home": {
+        "title": "Camisetas",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Camisetas",
+        "createOrEditLabel": "Crear o editar Camisetas",
+        "notFound": "Ningún Camisetas encontrado"
+      },
+      "created": "Un nuevo Camisetas ha sido creado con el identificador {{ param }}",
+      "updated": "Un Camisetas ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Camisetas ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Camisetas {{ id }}?"
+      },
+      "detail": {
+        "title": "Camisetas"
+      },
+      "id": "ID",
+      "stock": "Stock",
+      "imagen": "Imagen",
+      "talla": "Talla",
+      "color": "Color",
+      "coleccion": "Coleccion",
+      "venta": "Venta"
+    }
+  }
+}

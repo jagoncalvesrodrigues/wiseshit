@@ -1,0 +1,29 @@
+{
+  "wiseshitApp": {
+    "sudaderas": {
+      "home": {
+        "title": "Sudaderas",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sudaderas",
+        "createOrEditLabel": "Create or edit a Sudaderas",
+        "notFound": "No Sudaderas found"
+      },
+      "created": "A new Sudaderas is created with identifier {{ param }}",
+      "updated": "A Sudaderas is updated with identifier {{ param }}",
+      "deleted": "A Sudaderas is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sudaderas {{ id }}?"
+      },
+      "detail": {
+        "title": "Sudaderas"
+      },
+      "id": "ID",
+      "stock": "Stock",
+      "imagen": "Imagen",
+      "talla": "Talla",
+      "color": "Color",
+      "coleccion": "Coleccion",
+      "venta": "Venta"
+    }
+  }
+}
