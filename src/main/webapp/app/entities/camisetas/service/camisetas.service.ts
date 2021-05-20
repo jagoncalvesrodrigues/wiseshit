@@ -64,4 +64,13 @@ export class CamisetasService {
     }
     return camisetasCollection;
   }
+
+  // camisetasNotAvailable(req?: any): Observable<EntityArrayResponseType> {
+  //   const options = createRequestOption(req);
+  //   return this.http.get<ICamisetas[]>(`${this.resourceUrl}/notsoldCamiseta`, { params: options, observe: 'response' });
+  // }
+  // camisetasAvailable(req?: any): Observable<EntityArrayResponseType> {
+  //   const options = createRequestOption(req);
+  //   return this.http.get<ICamisetas[]>(`${this.resourceUrl}/soldCamiseta`, { params: options, observe: 'response' });
+  // }
 }

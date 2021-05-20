@@ -32,6 +32,14 @@ export class CamisetasUpdateComponent implements OnInit {
     });
   }
 
+  // onUpload():void{
+  //   console.log('hey');
+  // }
+
+  // onFileChange(e:any):void{
+  //   console.log('klk',e);
+  // }
+
   previousState(): void {
     window.history.back();
   }

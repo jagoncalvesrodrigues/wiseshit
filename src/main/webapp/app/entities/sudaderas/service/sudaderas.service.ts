@@ -47,6 +47,7 @@ export class SudaderasService {
 
   addSudaderasToCollectionIfMissing(
     sudaderasCollection: ISudaderas[],
+    // Rompemos la referencia con el private personajes para que no puedan entrar en el mediate el getter
     ...sudaderasToCheck: (ISudaderas | null | undefined)[]
   ): ISudaderas[] {
     const sudaderas: ISudaderas[] = sudaderasToCheck.filter(isPresent);
@@ -64,4 +65,12 @@ export class SudaderasService {
     }
     return sudaderasCollection;
   }
+  // sudaderasNotAvailable(req?: any): Observable<EntityArrayResponseType> {
+  //   const options = createRequestOption(req);
+  //   return this.http.get<ISudaderas[]>(`${this.resourceUrl}/notsoldSudadera`, { params: options, observe: 'response' });
+  // }
+  // sudaderasAvailable(req?: any): Observable<EntityArrayResponseType> {
+  //   const options = createRequestOption(req);
+  //   return this.http.get<ISudaderas[]>(`${this.resourceUrl}/soldSudadera`, { params: options, observe: 'response' });
+  // }
 }

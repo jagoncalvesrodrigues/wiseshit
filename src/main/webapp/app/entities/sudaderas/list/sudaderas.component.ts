@@ -13,6 +13,7 @@ import { SudaderasDeleteDialogComponent } from '../delete/sudaderas-delete-dialo
 @Component({
   selector: 'jhi-sudaderas',
   templateUrl: './sudaderas.component.html',
+  styleUrls: ['./sudaderas.component.scss'],
 })
 export class SudaderasComponent implements OnInit {
   sudaderas?: ISudaderas[];
@@ -23,6 +24,7 @@ export class SudaderasComponent implements OnInit {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  searchTerm!: string;
 
   constructor(
     protected sudaderasService: SudaderasService,
@@ -33,6 +35,7 @@ export class SudaderasComponent implements OnInit {
 
   loadPage(page?: number, dontNavigate?: boolean): void {
     this.isLoading = true;
+    this.searchTerm = '';
     const pageToLoad: number = page ?? this.page ?? 1;
 
     this.sudaderasService
@@ -52,6 +55,50 @@ export class SudaderasComponent implements OnInit {
         }
       );
   }
+
+  //   notavailablesudadera(page?: number, dontNavigate?: boolean): void {
+  //     this.isLoading=true;
+  //     const pageToLoad: number = page ?? this.page ?? 1;
+
+  //     this.sudaderasService
+  //     .sudaderasNotAvailable({
+  //       page: pageToLoad - 1,
+  //       size: this.itemsPerPage,
+  //       sort: this.sort(),
+  //     })
+  //     .subscribe(
+  //       (res: HttpResponse<ISudaderas[]>) => {
+  //         this.isLoading = false;
+  //         this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate);
+  //       },
+  //       () => {
+  //         this.isLoading = false;
+  //         this.onError();
+  //       }
+  //     );
+  // }
+
+  // availablesudaderas(page?: number, dontNavigate?: boolean): void {
+  //   this.isLoading = true;
+  //   const pageToLoad: number = page ?? this.page ?? 1;
+
+  //   this.sudaderasService
+  //     .sudaderasAvailable({
+  //       page: pageToLoad - 1,
+  //       size: this.itemsPerPage,
+  //       sort: this.sort(),
+  //     })
+  //     .subscribe(
+  //       (res: HttpResponse<ISudaderas[]>) => {
+  //         this.isLoading = false;
+  //         this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate);
+  //       },
+  //       () => {
+  //         this.isLoading = false;
+  //         this.onError();
+  //       }
+  //     );
+  //   }
 
   ngOnInit(): void {
     this.handleNavigation();

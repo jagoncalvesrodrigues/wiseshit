@@ -6,10 +6,18 @@ import { SudaderasDetailComponent } from './detail/sudaderas-detail.component';
 import { SudaderasUpdateComponent } from './update/sudaderas-update.component';
 import { SudaderasDeleteDialogComponent } from './delete/sudaderas-delete-dialog.component';
 import { SudaderasRoutingModule } from './route/sudaderas-routing.module';
+import { FormsModule } from '@angular/forms';
+import { SudaderasFilterPipe } from './list/sudaderas-filter.pipe';
 
 @NgModule({
-  imports: [SharedModule, SudaderasRoutingModule],
-  declarations: [SudaderasComponent, SudaderasDetailComponent, SudaderasUpdateComponent, SudaderasDeleteDialogComponent],
+  imports: [SharedModule, SudaderasRoutingModule, FormsModule],
+  declarations: [
+    SudaderasComponent,
+    SudaderasDetailComponent,
+    SudaderasUpdateComponent,
+    SudaderasDeleteDialogComponent,
+    SudaderasFilterPipe,
+  ],
   entryComponents: [SudaderasDeleteDialogComponent],
 })
 export class SudaderasModule {}

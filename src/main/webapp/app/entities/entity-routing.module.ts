@@ -34,6 +34,7 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'wiseshitApp.post.home.title' },
         loadChildren: () => import('./post/post.module').then(m => m.PostModule),
       },
+
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

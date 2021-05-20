@@ -40,6 +40,9 @@
     },
     "form": {
       "username.label": "Usuario",
+      "name.label": "Nombre",
+      "lastname.label": "Apellidos",
+      "postalcode.label": "Código Postal",
       "username.placeholder": "Nombre de usuario",
       "currentpassword.label": "Contraseña actual",
       "currentpassword.placeholder": "Contraseña actual",

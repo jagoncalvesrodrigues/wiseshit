@@ -2,18 +2,27 @@
   <h2 id="page-heading" data-cy="CamisetasHeading">
     <span jhiTranslate="wiseshitApp.camisetas.home.title">Camisetas</span>
 
-    <div class="d-flex justify-content-end">
-      <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
+    <div class="buscador">
+      <input placeholder="Search" [(ngModel)]="searchTerm" type="text" class="buscador" name="searchTerm" id="buscador" />
+    </div>
+
+    <div class="d-flex justify-content-end jj">
+      <!-- <button class="btn btn-info mr-2" (click)="loadPage()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span jhiTranslate="wiseshitApp.camisetas.home.refreshListLabel">Refresh List</span>
+      </button> -->
+
+      <button class="btn btn-dark botones" [disabled]="isLoading">
+        <span jhiTranslate="wiseshitApp.camisetas.home.All"> All </span>
+      </button>
+      <button class="btn btn-dark botones" [disabled]="isLoading">
+        <span jhiTranslate="wiseshitApp.camisetas.home.Available"> Available </span>
+      </button>
+      <button class="btn btn-dark botones" [disabled]="isLoading">
+        <span jhiTranslate="wiseshitApp.camisetas.home.SoldOut"> Sold Out </span>
       </button>
 
-      <button
-        id="jh-create-entity"
-        data-cy="entityCreateButton"
-        class="btn btn-primary jh-create-entity create-camisetas"
-        [routerLink]="['/camisetas/new']"
-      >
+      <button id="jh-create-entity" data-cy="entityCreateButton" class="btn btn-outline-dark" [routerLink]="['/camisetas/new']">
         <fa-icon icon="plus"></fa-icon>
         <span jhiTranslate="wiseshitApp.camisetas.home.createLabel"> Create a new Camisetas </span>
       </button>
@@ -52,7 +61,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let camisetas of camisetas; trackBy: trackId" data-cy="entityTable">
+        <tr *ngFor="let camisetas of camisetas | camisetasFilter: searchTerm; trackBy: trackId" data-cy="entityTable">
           <td>
             <a [routerLink]="['/camisetas', camisetas.id, 'view']">{{ camisetas.id }}</a>
           </td>

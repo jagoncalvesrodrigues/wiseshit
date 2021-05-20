@@ -7,11 +7,11 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "usuario": "Usuario",
-        "camisetas": "Camisetas",
-        "sudaderas": "Sudaderas",
-        "accesorios": "Accesorios",
-        "venta": "Venta",
+        "usuario": "User",
+        "camisetas": "T-shirts",
+        "sudaderas": "Hoodies",
+        "accesorios": "Accessories",
+        "venta": "Sale",
         "post": "Post",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
@@ -40,6 +40,9 @@
     },
     "form": {
       "username.label": "Username",
+      "name.label": "Name",
+      "lastname.label": "Last Name",
+      "postalcode.label": "Postal Code",
       "username.placeholder": "Your username",
       "currentpassword.label": "Current password",
       "currentpassword.placeholder": "Current password",

@@ -29,6 +29,15 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           path: 'login',
           loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
         },
+        {
+          path: 'vcamisetas',
+          loadChildren: () => import('./views/pages/vcamisetas/vcamiseta.module').then(m => m.VcamisetasModule),
+        },
+        {
+          path: 'vsudaderas',
+          loadChildren: () => import('./views/pages/vsudaderas/vsudaderas.module').then(m => m.VsudaderasModule),
+        },
+
         ...LAYOUT_ROUTES,
       ],
       { enableTracing: DEBUG_INFO_ENABLED }

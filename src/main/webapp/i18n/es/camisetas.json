@@ -4,7 +4,10 @@
       "home": {
         "title": "Camisetas",
         "refreshListLabel": "Refrescar lista",
-        "createLabel": "Crear nuevo Camisetas",
+        "Available": "Disponible",
+        "SoldOut": "Vendido",
+        "All": "Todo",
+        "createLabel": "Crear nueva Camisetas",
         "createOrEditLabel": "Crear o editar Camisetas",
         "notFound": "Ningún Camisetas encontrado"
       },

@@ -2,9 +2,12 @@
   "wiseshitApp": {
     "camisetas": {
       "home": {
-        "title": "Camisetas",
+        "title": "T-shirts",
         "refreshListLabel": "Refresh list",
         "createLabel": "Create a new Camisetas",
+        "Available": "Available",
+        "SoldOut": "Sold Out",
+        "All": "All",
         "createOrEditLabel": "Create or edit a Camisetas",
         "notFound": "No Camisetas found"
       },

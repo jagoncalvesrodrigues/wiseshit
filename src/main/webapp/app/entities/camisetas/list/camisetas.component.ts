@@ -3,7 +3,6 @@ import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { combineLatest } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
 import { ICamisetas } from '../camisetas.model';
 
 import { ITEMS_PER_PAGE } from 'app/config/pagination.constants';
@@ -13,9 +12,11 @@ import { CamisetasDeleteDialogComponent } from '../delete/camisetas-delete-dialo
 @Component({
   selector: 'jhi-camisetas',
   templateUrl: './camisetas.component.html',
+  styleUrls: ['./camisetas.component.scss'],
 })
 export class CamisetasComponent implements OnInit {
   camisetas?: ICamisetas[];
+  searchTerm!: string;
   isLoading = false;
   totalItems = 0;
   itemsPerPage = ITEMS_PER_PAGE;
@@ -33,6 +34,7 @@ export class CamisetasComponent implements OnInit {
 
   loadPage(page?: number, dontNavigate?: boolean): void {
     this.isLoading = true;
+    this.searchTerm = '';
     const pageToLoad: number = page ?? this.page ?? 1;
 
     this.camisetasService
@@ -52,6 +54,50 @@ export class CamisetasComponent implements OnInit {
         }
       );
   }
+
+  // notavailablecamiseta(page?: number, dontNavigate?: boolean): void {
+  //   this.isLoading = true;
+  //   const pageToLoad: number = page ?? this.page ?? 1;
+
+  //   this.camisetasService
+  //     .camisetasNotAvailable({
+  //       page: pageToLoad - 1,
+  //       size: this.itemsPerPage,
+  //       sort: this.sort(),
+  //     })
+  //     .subscribe(
+  //       (res: HttpResponse<ICamisetas[]>) => {
+  //         this.isLoading = false;
+  //         this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate);
+  //       },
+  //       () => {
+  //         this.isLoading = false;
+  //         this.onError();
+  //       }
+  //     );
+  // }
+
+  // availablecamisetas(page?: number, dontNavigate?: boolean): void {
+  //   this.isLoading = true;
+  //   const pageToLoad: number = page ?? this.page ?? 1;
+
+  //   this.camisetasService
+  //     .camisetasAvailable({
+  //       page: pageToLoad - 1,
+  //       size: this.itemsPerPage,
+  //       sort: this.sort(),
+  //     })
+  //     .subscribe(
+  //       (res: HttpResponse<ICamisetas[]>) => {
+  //         this.isLoading = false;
+  //         this.onSuccess(res.body, res.headers, pageToLoad, !dontNavigate);
+  //       },
+  //       () => {
+  //         this.isLoading = false;
+  //         this.onError();
+  //       }
+  //     );
+  // }
 
   ngOnInit(): void {
     this.handleNavigation();

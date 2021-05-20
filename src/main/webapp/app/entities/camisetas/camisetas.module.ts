@@ -6,10 +6,18 @@ import { CamisetasDetailComponent } from './detail/camisetas-detail.component';
 import { CamisetasUpdateComponent } from './update/camisetas-update.component';
 import { CamisetasDeleteDialogComponent } from './delete/camisetas-delete-dialog.component';
 import { CamisetasRoutingModule } from './route/camisetas-routing.module';
+import { FormsModule } from '@angular/forms';
+import { CamisetasFilterPipe } from './list/camisetas-fiter.pipe';
 
 @NgModule({
-  imports: [SharedModule, CamisetasRoutingModule],
-  declarations: [CamisetasComponent, CamisetasDetailComponent, CamisetasUpdateComponent, CamisetasDeleteDialogComponent],
+  imports: [SharedModule, CamisetasRoutingModule, FormsModule],
+  declarations: [
+    CamisetasComponent,
+    CamisetasDetailComponent,
+    CamisetasUpdateComponent,
+    CamisetasDeleteDialogComponent,
+    CamisetasFilterPipe,
+  ],
   entryComponents: [CamisetasDeleteDialogComponent],
 })
 export class CamisetasModule {}
