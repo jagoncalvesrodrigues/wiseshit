@@ -8,9 +8,10 @@ import { CamisetasDeleteDialogComponent } from './delete/camisetas-delete-dialog
 import { CamisetasRoutingModule } from './route/camisetas-routing.module';
 import { FormsModule } from '@angular/forms';
 import { CamisetasFilterPipe } from './list/camisetas-fiter.pipe';
+import { ImageUploadModule } from 'angular2-image-upload';
 
 @NgModule({
-  imports: [SharedModule, CamisetasRoutingModule, FormsModule],
+  imports: [SharedModule, CamisetasRoutingModule, FormsModule, ImageUploadModule.forRoot()],
   declarations: [
     CamisetasComponent,
     CamisetasDetailComponent,

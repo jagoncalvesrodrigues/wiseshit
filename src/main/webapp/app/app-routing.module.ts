@@ -37,7 +37,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           path: 'vsudaderas',
           loadChildren: () => import('./views/pages/vsudaderas/vsudaderas.module').then(m => m.VsudaderasModule),
         },
-
+        {
+          path: 'cart',
+          loadChildren: () => import('./cart/cart.module').then(m => m.CartModule),
+        },
         ...LAYOUT_ROUTES,
       ],
       { enableTracing: DEBUG_INFO_ENABLED }

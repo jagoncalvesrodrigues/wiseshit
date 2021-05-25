@@ -40,6 +40,9 @@ public class Usuario implements Serializable {
     @Column(name = "codigo_postal")
     private Integer codigoPostal;
 
+    @Column(name = "pass")
+    private String pass;
+
     @OneToMany(mappedBy = "usuario")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "usuario" }, allowSetters = true)
@@ -142,6 +145,19 @@ public class Usuario implements Serializable {
         this.codigoPostal = codigoPostal;
     }
 
+    public String getPass() {
+        return this.pass;
+    }
+
+    public Usuario pass(String pass) {
+        this.pass = pass;
+        return this;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
     public Set<Post> getPosts() {
         return this.posts;
     }
@@ -233,7 +249,8 @@ public class Usuario implements Serializable {
             ", correo='" + getCorreo() + "'" +
             ", numeroTelefono=" + getNumeroTelefono() +
             ", direccion='" + getDireccion() + "'" +
-            ", codigoPostal=" + getCodigoPostal() +
+            ", codigoPostal=" + getCodigoPostal() + "'" +
+            ", pass=" + getPass() +
             "}";
     }
 }

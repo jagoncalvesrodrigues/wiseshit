@@ -11,6 +11,7 @@ import { CamisetasService } from '../service/camisetas.service';
 @Component({
   selector: 'jhi-camisetas-update',
   templateUrl: './camisetas-update.component.html',
+  styleUrls: ['./camisetas-update.component.scss'],
 })
 export class CamisetasUpdateComponent implements OnInit {
   isSaving = false;

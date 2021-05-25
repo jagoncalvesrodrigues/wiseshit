@@ -1,0 +1,6 @@
+<changeSet  author="jj"  id="20210525115435">  
+    <dropTable  cascadeConstraints="true"  
+            catalogName="usuario"  
+            schemaName="wiseshit"  
+            tableName="usuario"/>  
+</changeSet>

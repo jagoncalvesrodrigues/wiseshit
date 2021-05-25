@@ -5,7 +5,9 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
-
+.row {
+  display: inline-block;
+}
 .slider {
   width: auto;
   display: inline-block;
@@ -16,10 +18,36 @@ Main page styles
   float: left;
 }
 
-.leftdiv img {
-  margin-top: 10%;
-  padding-left: 80px;
-  width: 60%;
+.camisetasindex {
+  margin-top: 5%;
+  margin-left: 8%;
+  height: 450px;
+  display: inline-block;
+}
+.cami {
+  float: left;
+  height: 400px;
+}
+.cami img {
+  height: 95%;
+}
+
+.bigmid {
+  width: 100%;
+}
+.bigmid img {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.yellowmat {
+  float: right;
+}
+
+.yellowmat img {
+  float: right;
+  margin-left: 1%;
+  width: 35%;
 }
 
 // .hipster {
