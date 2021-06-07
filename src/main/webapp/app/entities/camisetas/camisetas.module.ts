@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from 'app/shared/shared.module';
 import { CamisetasComponent } from './list/camisetas.component';
@@ -8,10 +9,9 @@ import { CamisetasDeleteDialogComponent } from './delete/camisetas-delete-dialog
 import { CamisetasRoutingModule } from './route/camisetas-routing.module';
 import { FormsModule } from '@angular/forms';
 import { CamisetasFilterPipe } from './list/camisetas-fiter.pipe';
-import { ImageUploadModule } from 'angular2-image-upload';
 
 @NgModule({
-  imports: [SharedModule, CamisetasRoutingModule, FormsModule, ImageUploadModule.forRoot()],
+  imports: [SharedModule, CamisetasRoutingModule, FormsModule, HttpClientModule],
   declarations: [
     CamisetasComponent,
     CamisetasDetailComponent,

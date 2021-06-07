@@ -44,10 +44,10 @@
                                  referencedColumnNames="id"
                                  referencedTableName="accesorios"/>
 
-        <addForeignKeyConstraint baseColumnNames="usuario_id"
+        <addForeignKeyConstraint baseColumnNames="user_id"
                                  baseTableName="venta"
-                                 constraintName="fk_venta__usuario_id"
+                                 constraintName="fk_venta__user_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="usuario"/>
+                                 referencedTableName="jhi_user"/> 
     </changeSet>
 </databaseChangeLog>

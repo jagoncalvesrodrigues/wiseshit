@@ -45,8 +45,8 @@
         </dd>
         <dt><span jhiTranslate="wiseshitApp.venta.usuario">Usuario</span></dt>
         <dd>
-          <div *ngIf="venta.usuario">
-            <a [routerLink]="['/usuario', venta.usuario?.id, 'view']">{{ venta.usuario?.id }}</a>
+          <div *ngIf="venta.user">
+            <a [routerLink]="['/user', venta.user?.id, 'view']">{{ venta.user?.id }}</a>
           </div>
         </dd>
       </dl>

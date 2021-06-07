@@ -1,6 +1,7 @@
 package com.mycompany.myapp.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.mycompany.myapp.config.Constants;
 import java.io.Serializable;
 import java.time.Instant;
@@ -81,7 +82,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "reset_date")
     private Instant resetDate = null;
 
-    @JsonIgnore
+    // RELACIONES DE LA BD
     @ManyToMany
     @JoinTable(
         name = "jhi_user_authority",
@@ -91,6 +92,16 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @BatchSize(size = 20)
     private Set<Authority> authorities = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "user" }, allowSetters = true)
+    private Set<Post> posts = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "camisetas", "sudaderas", "accesorios", "user" }, allowSetters = true)
+    private Set<Venta> ventas = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -195,6 +206,37 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     public void setAuthorities(Set<Authority> authorities) {
         this.authorities = authorities;
+    }
+
+    public Set<Venta> getVentas() {
+        return this.ventas;
+    }
+
+    public User ventas(Set<Venta> ventas) {
+        this.setVentas(ventas);
+        return this;
+    }
+
+    public User addVenta(Venta venta) {
+        this.ventas.add(venta);
+        venta.setUser(this);
+        return this;
+    }
+
+    public User removeVenta(Venta venta) {
+        this.ventas.remove(venta);
+        venta.setUser(null);
+        return this;
+    }
+
+    public void setVentas(Set<Venta> ventas) {
+        if (this.ventas != null) {
+            this.ventas.forEach(i -> i.setUser(null));
+        }
+        if (ventas != null) {
+            ventas.forEach(i -> i.setUser(this));
+        }
+        this.ventas = ventas;
     }
 
     @Override

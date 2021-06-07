@@ -1,3 +1,6 @@
+import { IPost } from 'app/entities/post/post.model';
+import { IVenta } from 'app/entities/venta/venta.model';
+
 export interface IUser {
   id?: number;
   login?: string;
@@ -11,6 +14,8 @@ export interface IUser {
   createdDate?: Date;
   lastModifiedBy?: string;
   lastModifiedDate?: Date;
+  posts?: IPost[] | null;
+  ventas?: IVenta[] | null;
 }
 
 export class User implements IUser {

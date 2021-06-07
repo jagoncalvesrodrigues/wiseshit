@@ -10,7 +10,7 @@ import { VCAMISETA_ROUTE } from './vcamisetas.route';
   imports: [SharedModule, RouterModule.forChild([VCAMISETA_ROUTE])],
   exports: [],
 })
-export class VcamisetasModule {
+export class VCamisetasModule {
   // constructor(){
   // }
   // ngOnInit(): void {

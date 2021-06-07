@@ -1,102 +1,98 @@
-<div class="mieldaloco">
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">CAMISETA CROCODILE</p>
-      <p class="card-text">14 EUR</p>
-    </div>
+<!-- <tbody>
+  <tr *ngFor="let camisetas of camisetas; trackBy: trackId" data-cy="entityTable">
+    <td>
+      <a [routerLink]="['/vcamisetas', camisetas.id, 'view']">{{ camisetas.id }}</a>
+    </td>
+    <td>{{ camisetas.stock }}</td>
+    <td>{{ camisetas.imagen }}</td>
+    <td>{{ camisetas.talla }}</td>
+    <td>{{ camisetas.color }}</td>
+    <td>{{ camisetas.coleccion }}</td>
+    <td class="text-right">
+      
+  </tr>
+</tbody> -->
+<div class="row">
+  <div class="slider">
+    <img class="estos" src="../../../../content/images/estos.jpg" />
+    <img class="rc" src="../../../../content/images/ambiente/rodri_cami.jpg" />
   </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/blanca_detras.jpg" />
-    <div class="card-body">
-      <p class="card-text">CAMISETA CROCODILE</p>
-      <p class="card-text">14 EUR</p>
+
+  <div class="mieldaloco">
+    <div class="card mb-1 camisetaVista">
+      <img
+        src="../../../../content/images/camisetas/azul_atras.png"
+        onmouseout="this.src='../../../../content/images/camisetas/azul_atras.png'"
+        onmouseover="this.src='../../../../content/images/camisetas/azul_delante.png'"
+      />
+      <div class="cardbody">
+        <div class="ncami">
+          <p>CAMISETA CROCODILE</p>
+        </div>
+        <div class="pcami">
+          <p>14 EUR</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/rosa_detras.jpg" />
-    <div class="card-body">
-      <p class="card-text">CAMISETA CROCODILE</p>
-      <p class="card-text">14 EUR</p>
+    <div class="card mb-1 camisetaVista">
+      <img
+        src="../../../../content/images/camisetas/blanca_detras.jpg"
+        onmouseout="this.src='../../../../content/images/camisetas/blanca_detras.jpg'"
+        onmouseover="this.src='../../../../content/images/camisetas/blanca_delante.jpg'"
+      />
+      <div class="cardbody">
+        <div class="ncami">
+          <p>CAMISETA CROCODILE</p>
+        </div>
+        <div class="pcami">
+          <p>14 EUR</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/rosa_detras.jpg" />
-    <div class="card-body">
-      <p class="card-text">CAMISETA CROCODILE</p>
-      <p class="card-text">14 EUR</p>
+    <div class="card mb-1 camisetaVista">
+      <img
+        src="../../../../content/images/camisetas/rosa_detras.jpg"
+        onmouseout="this.src='../../../../content/images/camisetas/rosa_detras.jpg'"
+        onmouseover="this.src='../../../../content/images/camisetas/rosa_delante.jpg'"
+      />
+      <div class="cardbody">
+        <div class="ncami">
+          <p>CAMISETA CROCODILE</p>
+        </div>
+        <div class="pcami">
+          <p>14 EUR</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/Verde_detras.jpg" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="card mb-1 camisetaVista">
+      <img
+        src="../../../../content/images/camisetas/negra_detras.jpg"
+        onmouseout="this.src='../../../../content/images/camisetas/negra_detras.jpg'"
+        onmouseover="this.src='../../../../content/images/camisetas/negra_delante.jpg'"
+      />
+      <div class="cardbody">
+        <div class="ncami">
+          <p>CAMISETA CROCODILE</p>
+        </div>
+        <div class="pcami">
+          <p>14 EUR</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-  <div class="card mb-2 camisetaVista">
-    <img src="../../../../content/images/camisetas/azul_atras.png" />
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <div class="card mb-1 camisetaVista">
+      <img
+        src="../../../../content/images/camisetas/Verde_detras.jpg"
+        onmouseout="this.src='../../../../content/images/camisetas/Verde_detras.jpg'"
+        onmouseover="this.src='../../../../content/images/camisetas/verde_adelante.jpg'"
+      />
+      <div class="cardbody">
+        <div class="ncami">
+          <p>CAMISETA CROCODILE</p>
+        </div>
+        <div class="pcami">
+          <p>14 EUR</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

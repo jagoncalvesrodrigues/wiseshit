@@ -25,28 +25,96 @@
         <div class="form-group">
           <label class="form-control-label" jhiTranslate="wiseshitApp.camisetas.stock" for="field_stock">Stock</label>
           <input type="number" class="form-control" name="stock" id="field_stock" data-cy="stock" formControlName="stock" />
+          <div *ngIf="editForm.get('stock')!.invalid && (editForm.get('stock')!.dirty || editForm.get('stock')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('stock')?.errors?.required"
+              jhiTranslate="global.messages.validate.email.required"
+            >
+              Your stock is required.
+            </small>
+          </div>
         </div>
+
+        <!-- IMPORTAR IMAGEN -->
 
         <div class="form-group">
           <label class="form-control-label" jhiTranslate="wiseshitApp.camisetas.imagen" for="field_imagen">Imagen</label>
-          <input type="file" class="form-control" name="imagen" id="field_imagen" data-cy="imagen" formControlName="imagen" />
-          <span id="btnUpload" class="">Subir</span>
-          <label for="input-custom-file">Elegir</label>
+          <input
+            type="file"
+            accept="image/*"
+            class="form-control"
+            name="imagen"
+            id="field_imagen"
+            data-cy="imagen"
+            formControlName="imagen"
+          />
         </div>
 
         <div class="form-group">
           <label class="form-control-label" jhiTranslate="wiseshitApp.camisetas.talla" for="field_talla">Talla</label>
           <input type="text" class="form-control" name="talla" id="field_talla" data-cy="talla" formControlName="talla" />
+          <div *ngIf="editForm.get('talla')!.invalid && (editForm.get('talla')!.dirty || editForm.get('talla')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('talla')?.errors?.required"
+              jhiTranslate="global.messages.validate.email.required"
+            >
+              Your size is required.
+            </small>
+
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('email')?.errors?.invalid"
+              jhiTranslate="global.messages.validate.email.invalid"
+            >
+              Your email is invalid.
+            </small>
+
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('email')?.errors?.minlength"
+              jhiTranslate="global.messages.validate.email.minlength"
+            >
+              Your email is required to be at least 5 characters.
+            </small>
+
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('email')?.errors?.maxlength"
+              jhiTranslate="global.messages.validate.email.maxlength"
+            >
+              Your email cannot be longer than 100 characters.
+            </small>
+          </div>
         </div>
 
         <div class="form-group">
           <label class="form-control-label" jhiTranslate="wiseshitApp.camisetas.color" for="field_color">Color</label>
           <input type="text" class="form-control" name="color" id="field_color" data-cy="color" formControlName="color" />
+          <div *ngIf="editForm.get('color')!.invalid && (editForm.get('color')!.dirty || editForm.get('color')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('color')?.errors?.required"
+              jhiTranslate="global.messages.validate.email.required"
+            >
+              Your color is required.
+            </small>
+          </div>
         </div>
 
         <div class="form-group">
           <label class="form-control-label" jhiTranslate="wiseshitApp.camisetas.coleccion" for="field_coleccion">Coleccion</label>
           <input type="number" class="form-control" name="coleccion" id="field_coleccion" data-cy="coleccion" formControlName="coleccion" />
+          <div *ngIf="editForm.get('collecion')!.invalid && (editForm.get('collecion')!.dirty || editForm.get('collecion')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('collecion')?.errors?.required"
+              jhiTranslate="global.messages.validate.email.required"
+            >
+              Your collection is required.
+            </small>
+          </div>
         </div>
       </div>
 

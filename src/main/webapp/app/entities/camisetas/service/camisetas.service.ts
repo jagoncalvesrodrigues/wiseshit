@@ -10,7 +10,9 @@ import { ICamisetas, getCamisetasIdentifier } from '../camisetas.model';
 export type EntityResponseType = HttpResponse<ICamisetas>;
 export type EntityArrayResponseType = HttpResponse<ICamisetas[]>;
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class CamisetasService {
   public resourceUrl = this.applicationConfigService.getEndpointFor('api/camisetas');
 

@@ -37,7 +37,7 @@
             <span jhiTranslate="wiseshitApp.venta.importe">Importe</span> <fa-icon icon="sort"></fa-icon>
           </th>
           <th scope="col" jhiSortBy="fecha"><span jhiTranslate="wiseshitApp.venta.fecha">Fecha</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="usuario.id">
+          <th scope="col" jhiSortBy="user.id">
             <span jhiTranslate="wiseshitApp.venta.usuario">Usuario</span> <fa-icon icon="sort"></fa-icon>
           </th>
           <th scope="col"></th>
@@ -51,8 +51,8 @@
           <td>{{ venta.importe }}</td>
           <td>{{ venta.fecha | formatMediumDatetime }}</td>
           <td>
-            <div *ngIf="venta.usuario">
-              <a [routerLink]="['/usuario', venta.usuario?.id, 'view']">{{ venta.usuario?.id }}</a>
+            <div *ngIf="venta.user">
+              <a [routerLink]="['/admin/user-management', venta.user?.login, 'view']">{{ venta.user?.id }}</a>
             </div>
           </td>
           <td class="text-right">

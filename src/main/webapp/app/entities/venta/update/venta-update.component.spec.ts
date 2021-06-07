@@ -15,10 +15,10 @@ import { ISudaderas } from 'app/entities/sudaderas/sudaderas.model';
 import { SudaderasService } from 'app/entities/sudaderas/service/sudaderas.service';
 import { IAccesorios } from 'app/entities/accesorios/accesorios.model';
 import { AccesoriosService } from 'app/entities/accesorios/service/accesorios.service';
-import { IUsuario } from 'app/entities/usuario/usuario.model';
-import { UsuarioService } from 'app/entities/usuario/service/usuario.service';
 
 import { VentaUpdateComponent } from './venta-update.component';
+import { IUser } from 'app/entities/user/user.model';
+import { UserService } from 'app/entities/user/user.service';
 
 describe('Component Tests', () => {
   describe('Venta Management Update Component', () => {
@@ -29,7 +29,7 @@ describe('Component Tests', () => {
     let camisetasService: CamisetasService;
     let sudaderasService: SudaderasService;
     let accesoriosService: AccesoriosService;
-    let usuarioService: UsuarioService;
+    let usersService: UserService;
 
     beforeEach(() => {
       TestBed.configureTestingModule({
@@ -46,7 +46,7 @@ describe('Component Tests', () => {
       camisetasService = TestBed.inject(CamisetasService);
       sudaderasService = TestBed.inject(SudaderasService);
       accesoriosService = TestBed.inject(AccesoriosService);
-      usuarioService = TestBed.inject(UsuarioService);
+      usersService = TestBed.inject(UserService);
 
       comp = fixture.componentInstance;
     });
@@ -109,23 +109,23 @@ describe('Component Tests', () => {
         expect(comp.accesoriosSharedCollection).toEqual(expectedCollection);
       });
 
-      it('Should call Usuario query and add missing value', () => {
+      it('Should call user query and add missing value', () => {
         const venta: IVenta = { id: 456 };
-        const usuario: IUsuario = { id: 9403 };
-        venta.usuario = usuario;
+        const user: IUser = { id: 9403 };
+        venta.user = user;
 
-        const usuarioCollection: IUsuario[] = [{ id: 26601 }];
-        spyOn(usuarioService, 'query').and.returnValue(of(new HttpResponse({ body: usuarioCollection })));
-        const additionalUsuarios = [usuario];
-        const expectedCollection: IUsuario[] = [...additionalUsuarios, ...usuarioCollection];
-        spyOn(usuarioService, 'addUsuarioToCollectionIfMissing').and.returnValue(expectedCollection);
+        const userCollection: IUser[] = [{ id: 26601 }];
+        spyOn(usersService, 'query').and.returnValue(of(new HttpResponse({ body: userCollection })));
+        const additionalusers = [user];
+        const expectedCollection: IUser[] = [...additionalusers, ...userCollection];
+        spyOn(usersService, 'addUserToCollectionIfMissing').and.returnValue(expectedCollection);
 
         activatedRoute.data = of({ venta });
         comp.ngOnInit();
 
-        expect(usuarioService.query).toHaveBeenCalled();
-        expect(usuarioService.addUsuarioToCollectionIfMissing).toHaveBeenCalledWith(usuarioCollection, ...additionalUsuarios);
-        expect(comp.usuariosSharedCollection).toEqual(expectedCollection);
+        expect(usersService.query).toHaveBeenCalled();
+        expect(usersService.addUserToCollectionIfMissing).toHaveBeenCalledWith(userCollection, ...additionalusers);
+        expect(comp.userSharedCollection).toEqual(expectedCollection);
       });
 
       it('Should update editForm', () => {
@@ -136,8 +136,8 @@ describe('Component Tests', () => {
         venta.sudaderas = [sudaderas];
         const accesorios: IAccesorios = { id: 53405 };
         venta.accesorios = [accesorios];
-        const usuario: IUsuario = { id: 64792 };
-        venta.usuario = usuario;
+        const user: IUser = { id: 64792 };
+        venta.user = user;
 
         activatedRoute.data = of({ venta });
         comp.ngOnInit();
@@ -146,7 +146,7 @@ describe('Component Tests', () => {
         expect(comp.camisetasSharedCollection).toContain(camisetas);
         expect(comp.sudaderasSharedCollection).toContain(sudaderas);
         expect(comp.accesoriosSharedCollection).toContain(accesorios);
-        expect(comp.usuariosSharedCollection).toContain(usuario);
+        expect(comp.userSharedCollection).toContain(user);
       });
     });
 
@@ -239,10 +239,10 @@ describe('Component Tests', () => {
         });
       });
 
-      describe('trackUsuarioById', () => {
-        it('Should return tracked Usuario primary key', () => {
+      describe('trackuserById', () => {
+        it('Should return tracked user primary key', () => {
           const entity = { id: 123 };
-          const trackResult = comp.trackUsuarioById(0, entity);
+          const trackResult = comp.trackUserById(0, entity);
           expect(trackResult).toEqual(entity.id);
         });
       });

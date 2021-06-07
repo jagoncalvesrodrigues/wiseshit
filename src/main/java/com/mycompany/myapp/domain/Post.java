@@ -28,7 +28,7 @@ public class Post implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "posts", "ventas" }, allowSetters = true)
-    private Usuario usuario;
+    private User user;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -70,17 +70,17 @@ public class Post implements Serializable {
         this.like = like;
     }
 
-    public Usuario getUsuario() {
-        return this.usuario;
+    public User getUser() {
+        return this.user;
     }
 
-    public Post usuario(Usuario usuario) {
-        this.setUsuario(usuario);
+    public Post user(User user) {
+        this.setUser(user);
         return this;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

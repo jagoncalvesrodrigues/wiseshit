@@ -30,13 +30,13 @@
           </span>
         </a>
       </li>
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <!-- <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
           <span>
             <span jhiTranslate="global.menu.entities.accesorios">Accesorios</span>
           </span>
         </a>
-      </li>
+      </li> -->
       <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
       <li
         *jhiHasAnyAuthority="'ROLE_ADMIN'"
@@ -55,24 +55,12 @@
           <li>
             <a
               class="dropdown-item"
-              routerLink="usuario"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{ exact: true }"
-              (click)="collapseNavbar()"
-            >
-              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
-              <span jhiTranslate="global.menu.entities.usuario">Usuario</span>
-            </a>
-          </li>
-          <li>
-            <a
-              class="dropdown-item"
               routerLink="camisetas"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="collapseNavbar()"
             >
-              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <i class="fas fa-tshirt"></i>
               <span jhiTranslate="global.menu.entities.camisetas">Camiseta</span>
             </a>
           </li>
@@ -84,7 +72,7 @@
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="collapseNavbar()"
             >
-              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <i class="fas fa-tshirt"></i>
               <span jhiTranslate="global.menu.entities.sudaderas">Sudadera</span>
             </a>
           </li>
@@ -96,7 +84,7 @@
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="collapseNavbar()"
             >
-              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <i class="fas fa-fingerprint"></i>
               <span jhiTranslate="global.menu.entities.accesorios">Accesorio</span>
             </a>
           </li>
@@ -108,12 +96,12 @@
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="collapseNavbar()"
             >
-              <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+              <i class="far fa-money-bill-alt"></i>
               <span jhiTranslate="global.menu.entities.venta">Venta</span>
             </a>
           </li>
           <li>
-            <a
+            <!-- <a
               class="dropdown-item"
               routerLink="post"
               routerLinkActive="active"
@@ -122,7 +110,7 @@
             >
               <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
               <span jhiTranslate="global.menu.entities.post">Post</span>
-            </a>
+            </a> -->
           </li>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </ul>
@@ -253,7 +241,7 @@
           </li>
         </ul>
       </li>
-      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <li *jhiHasAnyAuthority="'ROLE_USER'" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a class="nav-link" routerLink="cart" (click)="collapseNavbar()">
           <span>
             <fa-icon class="fas fa-shopping-cart" [fixedWidth]="true"></fa-icon>

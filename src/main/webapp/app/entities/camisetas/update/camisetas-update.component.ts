@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpResponse } from '@angular/common/http';
-import { FormBuilder } from '@angular/forms';
+import { HttpResponse, HttpClient } from '@angular/common/http';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
@@ -14,32 +14,32 @@ import { CamisetasService } from '../service/camisetas.service';
   styleUrls: ['./camisetas-update.component.scss'],
 })
 export class CamisetasUpdateComponent implements OnInit {
+  listaSize: string[] = ['S', 'M', 'L', 'XL', 'XXL'];
+  listaColors: string[] = ['Negro', 'Azul', 'Marron', 'Gris', 'Verde', 'Naranja', 'Rosa', 'Púrpura', 'Rojo', 'Blanco', 'Amarillo'];
+
   isSaving = false;
 
   editForm = this.fb.group({
     id: [],
-    stock: [],
+    stock: [0, [Validators.required]],
     imagen: [],
-    talla: [],
-    color: [],
-    coleccion: [],
+    talla: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(3), Validators.pattern('^[a-zA-Z]+$')]],
+    color: ['', [Validators.required]],
+    coleccion: [0, [Validators.required]],
   });
 
-  constructor(protected camisetasService: CamisetasService, protected activatedRoute: ActivatedRoute, protected fb: FormBuilder) {}
+  constructor(
+    private http: HttpClient,
+    protected camisetasService: CamisetasService,
+    protected activatedRoute: ActivatedRoute,
+    protected fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe(({ camisetas }) => {
       this.updateForm(camisetas);
     });
   }
-
-  // onUpload():void{
-  //   console.log('hey');
-  // }
-
-  // onFileChange(e:any):void{
-  //   console.log('klk',e);
-  // }
 
   previousState(): void {
     window.history.back();

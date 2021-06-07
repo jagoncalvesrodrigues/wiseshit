@@ -16,8 +16,8 @@ import { ISudaderas } from 'app/entities/sudaderas/sudaderas.model';
 import { SudaderasService } from 'app/entities/sudaderas/service/sudaderas.service';
 import { IAccesorios } from 'app/entities/accesorios/accesorios.model';
 import { AccesoriosService } from 'app/entities/accesorios/service/accesorios.service';
-import { IUsuario } from 'app/entities/usuario/usuario.model';
-import { UsuarioService } from 'app/entities/usuario/service/usuario.service';
+import { IUser } from 'app/admin/user-management/user-management.model';
+import { UserService } from 'app/entities/user/user.service';
 
 @Component({
   selector: 'jhi-venta-update',
@@ -29,7 +29,7 @@ export class VentaUpdateComponent implements OnInit {
   camisetasSharedCollection: ICamisetas[] = [];
   sudaderasSharedCollection: ISudaderas[] = [];
   accesoriosSharedCollection: IAccesorios[] = [];
-  usuariosSharedCollection: IUsuario[] = [];
+  userSharedCollection: IUser[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -38,7 +38,7 @@ export class VentaUpdateComponent implements OnInit {
     camisetas: [],
     sudaderas: [],
     accesorios: [],
-    usuario: [],
+    user: [],
   });
 
   constructor(
@@ -46,7 +46,7 @@ export class VentaUpdateComponent implements OnInit {
     protected camisetasService: CamisetasService,
     protected sudaderasService: SudaderasService,
     protected accesoriosService: AccesoriosService,
-    protected usuarioService: UsuarioService,
+    protected userService: UserService,
     protected activatedRoute: ActivatedRoute,
     protected fb: FormBuilder
   ) {}
@@ -90,7 +90,7 @@ export class VentaUpdateComponent implements OnInit {
     return item.id!;
   }
 
-  trackUsuarioById(index: number, item: IUsuario): number {
+  trackUserById(index: number, item: IUser): number {
     return item.id!;
   }
 
@@ -154,7 +154,7 @@ export class VentaUpdateComponent implements OnInit {
       camisetas: venta.camisetas,
       sudaderas: venta.sudaderas,
       accesorios: venta.accesorios,
-      usuario: venta.usuario,
+      user: venta.user,
     });
 
     this.camisetasSharedCollection = this.camisetasService.addCamisetasToCollectionIfMissing(
@@ -169,7 +169,7 @@ export class VentaUpdateComponent implements OnInit {
       this.accesoriosSharedCollection,
       ...(venta.accesorios ?? [])
     );
-    this.usuariosSharedCollection = this.usuarioService.addUsuarioToCollectionIfMissing(this.usuariosSharedCollection, venta.usuario);
+    this.userSharedCollection = this.userService.addUserToCollectionIfMissing(this.userSharedCollection, venta.user);
   }
 
   protected loadRelationshipsOptions(): void {
@@ -203,13 +203,11 @@ export class VentaUpdateComponent implements OnInit {
       )
       .subscribe((accesorios: IAccesorios[]) => (this.accesoriosSharedCollection = accesorios));
 
-    this.usuarioService
+    this.userService
       .query()
-      .pipe(map((res: HttpResponse<IUsuario[]>) => res.body ?? []))
-      .pipe(
-        map((usuarios: IUsuario[]) => this.usuarioService.addUsuarioToCollectionIfMissing(usuarios, this.editForm.get('usuario')!.value))
-      )
-      .subscribe((usuarios: IUsuario[]) => (this.usuariosSharedCollection = usuarios));
+      .pipe(map((res: HttpResponse<IUser[]>) => res.body ?? []))
+      .pipe(map((users: IUser[]) => this.userService.addUserToCollectionIfMissing(users, this.editForm.get('user')!.value)))
+      .subscribe((users: IUser[]) => (this.userSharedCollection = users));
   }
 
   protected createFromForm(): IVenta {
@@ -221,7 +219,7 @@ export class VentaUpdateComponent implements OnInit {
       camisetas: this.editForm.get(['camisetas'])!.value,
       sudaderas: this.editForm.get(['sudaderas'])!.value,
       accesorios: this.editForm.get(['accesorios'])!.value,
-      usuario: this.editForm.get(['usuario'])!.value,
+      user: this.editForm.get(['user'])!.value,
     };
   }
 }

@@ -48,9 +48,9 @@ public class CacheConfiguration {
             createCache(cm, com.mycompany.myapp.domain.User.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Authority.class.getName());
             createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".authorities");
-            createCache(cm, com.mycompany.myapp.domain.Usuario.class.getName());
-            createCache(cm, com.mycompany.myapp.domain.Usuario.class.getName() + ".posts");
-            createCache(cm, com.mycompany.myapp.domain.Usuario.class.getName() + ".ventas");
+            createCache(cm, com.mycompany.myapp.domain.User.class.getName());
+            createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".posts");
+            createCache(cm, com.mycompany.myapp.domain.User.class.getName() + ".ventas");
             createCache(cm, com.mycompany.myapp.domain.Camisetas.class.getName());
             createCache(cm, com.mycompany.myapp.domain.Camisetas.class.getName() + ".ventas");
             createCache(cm, com.mycompany.myapp.domain.Sudaderas.class.getName());

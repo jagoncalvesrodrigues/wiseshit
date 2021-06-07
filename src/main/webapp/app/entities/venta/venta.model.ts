@@ -2,7 +2,7 @@ import * as dayjs from 'dayjs';
 import { ICamisetas } from 'app/entities/camisetas/camisetas.model';
 import { ISudaderas } from 'app/entities/sudaderas/sudaderas.model';
 import { IAccesorios } from 'app/entities/accesorios/accesorios.model';
-import { IUsuario } from 'app/entities/usuario/usuario.model';
+import { IUser } from 'app/entities/user/user.model';
 
 export interface IVenta {
   id?: number;
@@ -11,7 +11,7 @@ export interface IVenta {
   camisetas?: ICamisetas[] | null;
   sudaderas?: ISudaderas[] | null;
   accesorios?: IAccesorios[] | null;
-  usuario?: IUsuario | null;
+  user?: IUser | null;
 }
 
 export class Venta implements IVenta {
@@ -22,7 +22,7 @@ export class Venta implements IVenta {
     public camisetas?: ICamisetas[] | null,
     public sudaderas?: ISudaderas[] | null,
     public accesorios?: IAccesorios[] | null,
-    public usuario?: IUsuario | null
+    public user?: IUser | null
   ) {}
 }
 

@@ -31,7 +31,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
         },
         {
           path: 'vcamisetas',
-          loadChildren: () => import('./views/pages/vcamisetas/vcamiseta.module').then(m => m.VcamisetasModule),
+          loadChildren: () => import('./views/pages/vcamisetas/vcamiseta.module').then(m => m.VCamisetasModule),
         },
         {
           path: 'vsudaderas',
